@@ -35,7 +35,7 @@
                     <a class="button is-light" id="login" style="display: none;">
                       Log in
                     </a>
-                    <a class="button is-transparent"  id="profile" style="display: none;border:none;">
+                    <a class="button is-danger"  id="profile" style="display: none;border:none;">
                         Your Profile
                       </a>
                       <a class="button is-link" id="add_blog" style="display: none;">
@@ -80,7 +80,7 @@
             </div>
           </section>
 
-          <footer class="footer">
+          <footer class="footer is-primary">
             <div class="content has-text-centered">
               <p>
                 <strong>Geek Blogs copyright 2020</strong> Developed by
@@ -95,14 +95,19 @@
 
 
        <!--profile modal-->
-       <div class="modal">
+       <div class="modal" id="user-profile">
             <div class="modal-background"></div>
             <div class="modal-content">
-              <p class="image is-4by3">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="">
-              </p>
+              <div class="box">
+                    <figure class="image is-64x64">
+                          <img src="" alt="user-photo" class="is-rounded" id="user-image">
+                    </figure><br>
+                    <p class="subtitle is-size-3" id="user-name"></p>
+                  <p class="user-email subtitle is-size-5"></p>
+                  <p class="subtitle is-size-6 user-bio"></p>
+              </div>
             </div>
-            <button class="modal-close is-large" aria-label="close"></button>
+            <button class="modal-close is-large" aria-label="close" id="closeprofile"></button>
           </div>
 
           <!--signup form modal-->
@@ -112,6 +117,13 @@
             <div class="modal-content">
               <div class="box">
                     <form action="" class="controls" id="form-signup">
+
+                        <div class="field">
+                              <label class="label">Full Name</label>
+                              <div class="control">
+                                <input class="input" type="text" placeholder="Your Full Name" id="uname">
+                              </div>
+                            </div>
                         <div class="field">
                               <label class="label">Email</label>
                               <div class="control">
@@ -122,7 +134,14 @@
                             <div class="field">
                               <label class="label">Create Password</label>
                               <div class="control">
-                                <input class="input" type="text" placeholder="Create Password" id="password">
+                                <input class="input" type="password" placeholder="Create Password" id="password">
+                              </div>
+                            </div>
+
+                            <div class="field">
+                              <label class="label">Short Bio</label>
+                              <div class="control">
+                                <textarea class="textarea" placeholder="10 lines of textarea" rows="5" id="bio"></textarea>
                               </div>
                             </div>
                             <div class="field">
@@ -155,7 +174,7 @@
                                 <div class="field">
                                   <label class="label">Password</label>
                                   <div class="control">
-                                    <input class="input" type="text" placeholder="Create Password" id="passwordlogin">
+                                    <input class="input" type="password" placeholder="Create Password" id="passwordlogin">
                                   </div>
                                 </div>
                                 <div class="field">
@@ -326,7 +345,12 @@ $('#blog-form').removeClass('is-active');
                         console.log(blogs);
                         const content=`
                         <h1 class="title">${blogs.title}</h1>
-                        <p class="subtitle">post by:${blogs.by}</p>
+
+                        <p align="center"><figure class="image is-64x64">
+                              <img src="${blogs.imgUrl}" class="is-rounded">
+                              </figure></p>
+                        
+                        <p>Post By ${blogs.by}</p>
                         <p>${blogs.description}</p>
                         <a href="${blogs.url}" class="button is-link">Read Full Post</a>
                         `;
@@ -336,7 +360,7 @@ $('#blog-form').removeClass('is-active');
                   }
                   else
                   {     $('#image').attr('src','connection.png');
-                        domelement.innerHTML="<h1 class='title'>Error While Loading Blog Content From Data</h1><p class='subtitle'>Make Sure Internet connection Turned On</p>";   
+                        domelement.innerHTML="<h1 class='title is-size-1'>Slow Internet Connection</h1>";   
                   }
             }
 
@@ -348,7 +372,23 @@ auth.onAuthStateChanged(user=>{
       if(user)
       {
             console.log('User logged In!');
-            $('#profile').html(user.email);
+
+            db.collection('users').doc(user.uid).get().then(doc=>{
+                  $('#profile').on('click',function(){
+                  $('#user-profile').addClass('is-active');
+                  $('.user-email').html('Signed in as '+user.email);
+                  $('#user-image').attr('src',doc.data().imgUrl);
+                  $('#user-name').html(doc.data().name);
+                  $('.user-bio').html('Your Bio '+doc.data().bio);
+                  console.log('working');
+                  
+            });
+            $('#closeprofile').on('click',function(){
+                  $('#user-profile').removeClass('is-active');
+            });
+            });
+            
+            
             
       $('#logout').css('display','block');
       $('#add_blog').css('display','block');
@@ -363,10 +403,22 @@ auth.onAuthStateChanged(user=>{
 const blogtitle=$('#blogtitle').val();
 const desc=$('#desc').val();
 const link=$('#url').val();
+var post_user="";
+var user_image="";
+db.collection('users').doc(user.uid).get().then(doc=>{
+post_user=doc.data().name;
+user_image=doc.data().imgUrl;
+console.log(post_user);
+console.log(user_image);
+add_data(post_user,user_image);
+});
 
-db.collection('blogs').add({
+
+const add_data = (name,image)=>{
+      db.collection('blogs').add({
       title:blogtitle,
-      by:user.email,
+      by:name,
+      imgUrl:image,
       description:desc,
       url:link
 }).then(()=>{
@@ -375,10 +427,11 @@ db.collection('blogs').add({
       $('#form-blog').trigger("reset");
       
      
-}).error(err=>{
+}).catch(err=>{
       console.log(err.message);
       domelement.innerHTML=`<h1 class='title'>${err.message}</h1>`;  
 });
+}
 
 });
       //get blog data
@@ -414,15 +467,22 @@ $('#signup-form').removeClass('is-active');
 $('#form-signup').on('submit',function(e)
 {
 e.preventDefault();
+const full_name=$('#uname').val();
 const email=$('#email').val();
 const password=$('#password').val();
+const bioText = $('#bio').val();
 $('#submitsignup').addClass('is-loading');
 
 auth.createUserWithEmailAndPassword(email,password).then(cred=>{
 console.log(cred.user);
+return db.collection('users').doc(cred.user.uid).set({
+      bio:bioText,
+      imgUrl:'https://avatars.dicebear.com/v2/avataaars/'+full_name+'.svg',
+      name:full_name,
+});
+}).then(()=>{
 $('#signup-form').removeClass('is-active');
 $('#form-signup').trigger("reset");
-
 }).catch(function(error){
       console.log(error.message);
       console.log('Error Occurred!');
