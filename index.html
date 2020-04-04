@@ -160,6 +160,12 @@
                                 </div>
                                 <div class="field">
                                   
+                                    <div class="control">
+                                      <a id="forget" class="is-warning">Forgot Password?</a>
+                                    </div>
+                                  </div>
+                                <div class="field">
+                                  
                                   <div class="control">
                                     <button id="loginsubmit" class="button is-light" type="submit">Login</button>
                                   </div>
@@ -169,6 +175,34 @@
                   </div>
             </div>
             <button class="modal-close is-large" aria-label="close" id="closelogin"></button>
+          </div>
+
+
+           <!--Forgot Password modal-->
+
+           <div class="modal" id="forget-form">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                  <div class="box">
+                        <form action="" class="controls" id="form-forget">
+                            <div class="field">
+                                  <label class="label">Provide Registered Email</label>
+                                  <div class="control">
+                                    <input class="input" type="text" placeholder="Email" id="emailforget">
+                                  </div>
+                                </div>
+    
+                                <div class="field">
+                                  
+                                  <div class="control">
+                                    <button id="forgetsubmit" class="button is-dark" type="submit">Forget Password</button>
+                                  </div>
+                                </div>
+                        </form>
+                      
+                  </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close" id="closeforget"></button>
           </div>
 
           <!--add Blog form modal-->
@@ -392,7 +426,7 @@ $('#form-signup').trigger("reset");
 }).catch(function(error){
       console.log(error.message);
       console.log('Error Occurred!');
-      domelement.innerHTML="<h1 class='title'>"+error.message+"</h1>";
+      domelement.innerHTML="<p class='subtitle has-text-danger'>"+error.message+"</p>";
       $('#signup-form').removeClass('is-active');
       $('#form-signup').trigger("reset");
 });
@@ -443,11 +477,52 @@ $('#form-login').trigger("reset");
 }).catch(function(error){
       console.log(error.message);
       console.log('Error Occurred!');
-      domelement.innerHTML="<h1 class='title'>"+error.message+"</h1>";
+      domelement.innerHTML="<p class='subtitle has-text-danger'>"+error.message+"</p>";
       $('#login-form').removeClass('is-active');
 });
 
 });
+
+
+//forgot password
+
+$('#forget').on('click',function(){
+      $('#login-form').removeClass('is-active');
+      $('#forget-form').addClass('is-active');
+
+      
+
+      //close the forget password dialogue on close button click
+      $('#closeforget').on('click',function(){
+            $('#forget-form').removeClass('is-active');
+      });
+
+      
+
+});
+
+
+$('#form-forget').on('submit',function(e){
+      e.preventDefault();
+            const emailforget=$('#emailforget').val();
+            if(emailforget!="")
+            {
+                  auth.sendPasswordResetEmail(emailforget).then(()=>{
+                        domelement.innerHTML="<p class='subtitle has-text-success'>Email Sented Please Check Email.</p>";
+                        $('#forget-form').removeClass('is-active');
+                  }).catch((error)=>{
+                        console.log(error.message);
+                        domelement.innerHTML="<p class='subtitle has-text-danger'>"+error.message+"</p>";
+                        console.log('Email Not Found!');
+                  })
+            }
+            else
+            {
+                  domelement.innerHTML="<p class='subtitle has-text-danger'>Email Required</p>"; 
+                  $('#forget-form').removeClass('is-active');  
+            }
+
+      });
 
 
 
