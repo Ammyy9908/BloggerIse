@@ -171,6 +171,39 @@
             <button class="modal-close is-large" aria-label="close" id="closelogin"></button>
           </div>
 
+          <!--add Blog form modal-->
+
+          <div class="modal" id="blog-form">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                  <div class="box">
+                        <form action="" class="controls" id="form-blog">
+                            <div class="field">
+                                  <label class="label">Blog Title</label>
+                                  <div class="control">
+                                    <input class="input" type="text" placeholder="Blog Title" id="blogtitle">
+                                  </div>
+                                </div>
+    
+                                <div class="field">
+                                  <label class="label">Blog Description</label>
+                                  <div class="control">
+                                    <textarea class="textarea" placeholder="10 lines of textarea" rows="12" id="desc"></textarea>
+                                  </div>
+                                </div>
+                                <div class="field">
+                                  
+                                  <div class="control">
+                                    <input class="button is-dark" type="submit" value="Submit" id="submit">
+                                  </div>
+                                </div>
+                        </form>
+                      
+                  </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close" id="closeblog"></button>
+          </div>
+
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -220,6 +253,31 @@
 $(".navbar-burger").toggleClass("is-active");
 $(".navbar-menu").toggleClass("is-active");
 
+});
+
+//trigger blog modal
+$('#add_blog').on('click',function(){
+$('#blog-form').addClass('is-active');
+$('#form-blog').on('submit',function(e)
+{
+   e.preventDefault();   
+const blogtitle=$('#blogtitle').val();
+const desc=$('#desc').val();
+db.collection('blogs').add({
+      title:blogtitle,
+      description:desc
+}).then(()=>{
+      console.log('Blog Added!');
+      $('#blog-form').removeClass('is-active');
+      $('#form-blog').trigger("reset");
+     
+})
+
+});
+$('#closeblog').on('click',function(){
+$('#blog-form').removeClass('is-active');
+
+});
 });
 
 
