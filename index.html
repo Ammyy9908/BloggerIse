@@ -7,14 +7,6 @@
     <link rel="stylesheet" href="bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="index.css">
-              <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
   </head>
   <body>
       <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -146,43 +138,6 @@
             <button class="modal-close is-large" aria-label="close" id="close"></button>
           </div>
 
-
-
-          <!--add blog modal-->
-
-          <!--signup form modal-->
-
-          <div class="modal" id="blog-form">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-              <div class="box">
-                    <form action="" class="controls" id="form-blog">
-                        <div class="field">
-                              <label class="label">Blog Title</label>
-                              <div class="control">
-                                <input class="input" type="text" placeholder="Blog Title" id="title">
-                              </div>
-                            </div>
-
-                            <div class="field">
-                              <label class="label">Description</label>
-                              <div class="control">
-                                <textarea class="textarea">
-                              </div>
-                            </div>
-                            <div class="field">
-                              
-                              <div class="control">
-                                <input class="button is-primary" type="submit" value="Sign up" id="submit">
-                              </div>
-                            </div>
-                    </form>
-                  
-              </div>
-            </div>
-            <button class="modal-close is-large" aria-label="close" id="closeblog"></button>
-          </div>
-
           <!--login form modal-->
 
           <div class="modal" id="login-form">
@@ -218,14 +173,17 @@
 
 
 
-          
-
-
-
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
 
+          <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
 
 <script>
   // Your web app's Firebase configuration
@@ -255,15 +213,6 @@
 <script>
       $(document).ready(function()
 {
-       // Check for click events on the navbar burger icon
-  $(".navbar-burger").click(function() {
-
-// Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-$(".navbar-burger").toggleClass("is-active");
-$(".navbar-menu").toggleClass("is-active");
-
-});
-
             //insert data to dom elements
 
             const domelement=document.querySelector('.content');
@@ -303,10 +252,6 @@ auth.onAuthStateChanged(user=>{
       $('#profile').css('display','block');
       $('#signup').css('display','none');
       $('#login').css('display','none');
-      //trigger blog form modal
-      $('#add_blog').on('click',function(){
-            $('#blog-form').addClass('is-active');
-      })
       //get blog data
       db.collection('blogs').get().then(snapshot=>{
             console.log(snapshot.docs);
