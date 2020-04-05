@@ -51,13 +51,13 @@
               </div>
             </div>
           </nav>
-          <section class="hero ">
+          <section class="hero is-fullheight">
             <div class="hero-body">
               <div class="container">
                 <div class="columns">
-                  <div class="column is-8 is-offset-2">
+                  <div class="column is-offset-2 is-8">
                     <figure class="image is-16by9">
-                      <img src="first-post.png" alt="image" id="image">
+                      <img src="https://source.unsplash.com/random/?geek" alt="image" id="image">
                     </figure>
                   </div>
                 </div>
@@ -356,7 +356,9 @@ $('#blog-form').removeClass('is-active');
                         
                         <p>Post By ${blogs.by}</p>
                         <p>${blogs.description}</p>
-                        <a href="${blogs.url}" class="button is-link">Read Full Post</a>
+                        <a href="${blogs.url}" class="button is-danger is-rounded"><i class="fas fa-eye"></i></a>
+                        <a href="whatsapp://send?text=${blogs.url}" class="button is-primary is-rounded"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://twitter.com/intent/tweet?text=${blogs.url}" class="button is-link is-rounded"><i class="fab fa-twitter"></i></a>
                         `;
                         html+=content;
                   });
@@ -443,7 +445,7 @@ const add_data = (name,image)=>{
       //get blog data
       db.collection('blogs').onSnapshot(snapshot=>{
             console.log(snapshot.docs);
-            $('#image').attr('src','first-post.png');
+            //$('#image').attr('src','first-post.png');
             setUpData(snapshot.docs);
       });
       }
