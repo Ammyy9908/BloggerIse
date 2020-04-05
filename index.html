@@ -245,7 +245,7 @@
                                 <div class="field">
                                   <label class="label">Blog Description</label>
                                   <div class="control">
-                                    <textarea class="textarea" placeholder="10 lines of textarea" rows="12" id="desc"></textarea>
+                                    <textarea class="textarea" placeholder="Add some Details about This Post...." rows="12" id="desc"></textarea>
                                   </div>
                                 </div>
                                 <div class="field">
@@ -428,6 +428,7 @@ const add_data = (name,image)=>{
       url:link
 }).then(()=>{
       console.log('Blog Added!');
+      $('#blogsubmit').removeClass('is-loading');
       $('#blog-form').removeClass('is-active');
       $('#form-blog').trigger("reset");
       
