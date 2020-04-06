@@ -1,353 +1,352 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Geek Blog Sumit</title>
-    <link rel="stylesheet" href="bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <link rel="stylesheet" href="index.css">
-  </head>
-  <body>
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-              <a class="navbar-item" href="">
-                <!--<img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">-->
-                <strong>Geek Blog</strong>
-              </a>
-          
-              <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-              </a>
-            </div>
-          
-            <div id="navbarBasicExample" class="navbar-menu">
-              
-          
-              <div class="navbar-end">
-                <div class="navbar-item">
-                  <div class="buttons">
-                    <a class="button is-primary" id="signup" style="display: none;">
-                      <strong>Sign up</strong>
-                    </a>
-                    <a class="button is-light" id="login" style="display: none;">
-                      Log in
-                    </a>
-                    <a class="button is-danger"  id="profile" style="display: none;border:none;">
-                        Your Profile
-                      </a>
-                      <a class="button is-link" id="add_blog" style="display: none;">
-                        Add Blog
-                      </a>
-                    <a class="button is-success" id="logout" style="display: none;">
-                        Log out
-                      </a>
 
-                     
-                  </div>
-                </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geek Blog Sumit</title>
+  <link rel="stylesheet" href="bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="">
+        <!--<img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">-->
+        <strong>Geek Blog</strong>
+      </a>
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+        data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary" id="signup" style="display: none;">
+              <strong>Sign up</strong>
+            </a>
+            <a class="button is-light" id="login" style="display: none;">
+              Log in
+            </a>
+            <a class="button is-danger" id="profile" style="display: none;border:none;">
+              Your Profile
+            </a>
+            <a class="button is-link" id="add_blog" style="display: none;">
+              Add Blog
+            </a>
+            <a class="button is-success" id="logout" style="display: none;">
+              Log out
+            </a>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section class="hero is-fullheight">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-offset-2 is-8">
+            <figure class="image is-16by9">
+              <img src="https://source.unsplash.com/random/?geek" alt="image" id="image">
+            </figure>
+          </div>
+        </div>
+
+        <section class="section">
+          <div class="columns">
+            <div class="column is-8 is-offset-2">
+              <div class="content is-medium">
+
+
+
+                <progress class="progress is-primary" max="100" style="height: 2px;">15%</progress>
+                <!--<h2 class="subtitle is-4">December 25, 2018</h2>-->
+
               </div>
             </div>
-          </nav>
-          <section class="hero is-fullheight">
-            <div class="hero-body">
-              <div class="container">
-                <div class="columns">
-                  <div class="column is-offset-2 is-8">
-                    <figure class="image is-16by9">
-                      <img src="https://source.unsplash.com/random/?geek" alt="image" id="image">
-                    </figure>
-                  </div>
-                </div>
-        
-                <section class="section">
-                  <div class="columns">
-                    <div class="column is-8 is-offset-2">
-                      <div class="content is-medium">
+          </div>
+        </section>
 
 
 
-                        <progress class="progress is-primary" max="100" style="height: 2px;">15%</progress>
-                        <!--<h2 class="subtitle is-4">December 25, 2018</h2>-->
-                        
-                      </div>
-                    </div>
-                  </div>
-                </section>
-        
-               
-        
-        
-              </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer is-primary">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Geek Blogs copyright 2020</strong> Developed by
+        <a href="https://ammyy9908.github.io/PortfolioSumit/">Sumit</a>
+      </p>
+    </div>
+  </footer>
+
+
+
+
+
+
+  <!--profile modal-->
+  <div class="modal" id="user-profile">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="box">
+        <figure class="image is-64x64">
+          <img src="" alt="user-photo" class="is-rounded" id="user-image">
+        </figure><br>
+        <p class="subtitle is-size-3" id="user-name"></p>
+        <p class="user-email subtitle is-size-5"></p>
+        <p class="subtitle is-size-6 user-bio"></p>
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" id="closeprofile"></button>
+  </div>
+
+  <!--signup form modal-->
+
+  <div class="modal" id="signup-form">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="box">
+        <form action="" class="controls" id="form-signup">
+
+          <div class="field">
+            <label class="label">Full Name</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Your Full Name" id="uname">
             </div>
-          </section>
-
-          <footer class="footer is-primary">
-            <div class="content has-text-centered">
-              <p>
-                <strong>Geek Blogs copyright 2020</strong> Developed by
-                <a href="https://ammyy9908.github.io/PortfolioSumit/">Sumit</a>
-              </p>
+          </div>
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Email" id="email">
             </div>
-          </footer>
-        
-         
-        
-         
-
-
-       <!--profile modal-->
-       <div class="modal" id="user-profile">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-              <div class="box">
-                    <figure class="image is-64x64">
-                          <img src="" alt="user-photo" class="is-rounded" id="user-image">
-                    </figure><br>
-                    <p class="subtitle is-size-3" id="user-name"></p>
-                  <p class="user-email subtitle is-size-5"></p>
-                  <p class="subtitle is-size-6 user-bio"></p>
-              </div>
-            </div>
-            <button class="modal-close is-large" aria-label="close" id="closeprofile"></button>
           </div>
 
-          <!--signup form modal-->
-
-          <div class="modal" id="signup-form">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-              <div class="box">
-                    <form action="" class="controls" id="form-signup">
-
-                        <div class="field">
-                              <label class="label">Full Name</label>
-                              <div class="control">
-                                <input class="input" type="text" placeholder="Your Full Name" id="uname">
-                              </div>
-                            </div>
-                        <div class="field">
-                              <label class="label">Email</label>
-                              <div class="control">
-                                <input class="input" type="text" placeholder="Email" id="email">
-                              </div>
-                            </div>
-
-                            <div class="field">
-                              <label class="label">Create Password</label>
-                              <div class="control">
-                                <input class="input" type="password" placeholder="Create Password" id="password">
-                              </div>
-                            </div>
-
-                            <div class="field">
-                              <label class="label">Short Bio</label>
-                              <div class="control">
-                                <textarea class="textarea" placeholder="10 lines of textarea" rows="5" id="bio"></textarea>
-                              </div>
-                            </div>
-                            <div class="field">
-                              
-                              <div class="control">
-                                <button id="submitsignup" class="button is-dark" type="submit">Sign up</button>
-                              </div>
-                            </div>
-                    </form>
-                  
-              </div>
+          <div class="field">
+            <label class="label">Create Password</label>
+            <div class="control">
+              <input class="input" type="password" placeholder="Create Password" id="password">
             </div>
-            <button class="modal-close is-large" aria-label="close" id="close"></button>
           </div>
 
-          <!--login form modal-->
-
-          <div class="modal" id="login-form">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-                  <div class="box">
-                        <form action="" class="controls" id="form-login">
-                            <div class="field">
-                                  <label class="label">Email</label>
-                                  <div class="control">
-                                    <input class="input" type="text" placeholder="Email" id="emaillogin">
-                                  </div>
-                                </div>
-    
-                                <div class="field">
-                                  <label class="label">Password</label>
-                                  <div class="control">
-                                    <input class="input" type="password" placeholder="Create Password" id="passwordlogin">
-                                  </div>
-                                </div>
-                                <div class="field">
-                                  
-                                    <div class="control">
-                                      <a id="forget" class="is-warning">Forgot Password?</a>
-                                    </div>
-                                  </div>
-                                <div class="field">
-                                  
-                                  <div class="control">
-                                    <button id="loginsubmit" class="button is-light" type="submit">Login</button>
-                                  </div>
-                                </div>
-                        </form>
-                      
-                  </div>
+          <div class="field">
+            <label class="label">Short Bio</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="10 lines of textarea" rows="5" id="bio"></textarea>
             </div>
-            <button class="modal-close is-large" aria-label="close" id="closelogin"></button>
+          </div>
+          <div class="field">
+
+            <div class="control">
+              <button id="submitsignup" class="button is-dark" type="submit">Sign up</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" id="close"></button>
+  </div>
+
+  <!--login form modal-->
+
+  <div class="modal" id="login-form">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="box">
+        <form action="" class="controls" id="form-login">
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Email" id="emaillogin">
+            </div>
           </div>
 
-
-           <!--Forgot Password modal-->
-
-           <div class="modal" id="forget-form">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-                  <div class="box">
-                        <form action="" class="controls" id="form-forget">
-                            <div class="field">
-                                  <label class="label">Provide Registered Email</label>
-                                  <div class="control">
-                                    <input class="input" type="text" placeholder="Email" id="emailforget">
-                                  </div>
-                                </div>
-    
-                                <div class="field">
-                                  
-                                  <div class="control">
-                                    <button id="forgetsubmit" class="button is-dark" type="submit">Forget Password</button>
-                                  </div>
-                                </div>
-                        </form>
-                      
-                  </div>
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control">
+              <input class="input" type="password" placeholder="Create Password" id="passwordlogin">
             </div>
-            <button class="modal-close is-large" aria-label="close" id="closeforget"></button>
+          </div>
+          <div class="field">
+
+            <div class="control">
+              <a id="forget" class="is-warning">Forgot Password?</a>
+            </div>
+          </div>
+          <div class="field">
+
+            <div class="control">
+              <button id="loginsubmit" class="button is-light" type="submit">Login</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" id="closelogin"></button>
+  </div>
+
+
+  <!--Forgot Password modal-->
+
+  <div class="modal" id="forget-form">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="box">
+        <form action="" class="controls" id="form-forget">
+          <div class="field">
+            <label class="label">Provide Registered Email</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Email" id="emailforget">
+            </div>
           </div>
 
-          <!--add Blog form modal-->
+          <div class="field">
 
-          <div class="modal" id="blog-form">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-                  <div class="box">
-                        <form action="" class="controls" id="form-blog">
-                            <div class="field">
-                                  <label class="label">Blog Title</label>
-                                  <div class="control">
-                                    <input class="input" type="text" placeholder="Blog Title" id="blogtitle">
-                                  </div>
-                                </div>
-    
-                                <div class="field">
-                                  <label class="label">Blog Description</label>
-                                  <div class="control">
-                                    <textarea class="textarea" placeholder="Add some Details about This Post...." rows="12" id="desc"></textarea>
-                                  </div>
-                                </div>
-                                <div class="field">
-                                    <label class="label">Source URL:</label>
-                                    <div class="control has-icons-left has-icons-right">
-                                      <input class="input" type="text" placeholder="Post Source URL..." id="url">
-                                      <span class="icon is-small is-left">
-                                        <i class="fas fa-link"></i>
-                                      </span>
-                                      <span class="icon is-small is-right">
-                                        <i class="fas fa-check"></i>
-                                      </span>
-                                    </div>
-                                    
-                                  </div>
-                                <div class="field">
-                                  
-                                  <div class="control">
-                                    <button class="button is-primary" type="submit" id="blogsubmit">Submit</button>
-                                  </div>
-                                </div>
-                        </form>
-                      
-                  </div>
+            <div class="control">
+              <button id="forgetsubmit" class="button is-dark" type="submit">Forget Password</button>
             </div>
-            <button class="modal-close is-large" aria-label="close" id="closeblog"></button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" id="closeforget"></button>
+  </div>
+
+  <!--add Blog form modal-->
+
+  <div class="modal" id="blog-form">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="box">
+        <form action="" class="controls" id="form-blog">
+          <div class="field">
+            <label class="label">Blog Title</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Blog Title" id="blogtitle">
+            </div>
           </div>
 
+          <div class="field">
+            <label class="label">Blog Description</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Add some Details about This Post...." rows="12"
+                id="desc"></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Source URL:</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="text" placeholder="Post Source URL..." id="url">
+              <span class="icon is-small is-left">
+                <i class="fas fa-link"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+
+          </div>
+          <div class="field">
+
+            <div class="control">
+              <button class="button is-primary" type="submit" id="blogsubmit">Submit</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" id="closeblog"></button>
+  </div>
 
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
 
-          <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
+  <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyCMK5HQzBHVrjfnJUw2kifS800iubSO4Nk",
-    authDomain: "sir-mvit-blog.firebaseapp.com",
-    databaseURL: "https://sir-mvit-blog.firebaseio.com",
-    projectId: "sir-mvit-blog",
-    storageBucket: "sir-mvit-blog.appspot.com",
-    messagingSenderId: "160349909662",
-    appId: "1:160349909662:web:1b5f712a7a109c53df818f",
-    measurementId: "G-71RMEJSLER"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCMK5HQzBHVrjfnJUw2kifS800iubSO4Nk",
+      authDomain: "sir-mvit-blog.firebaseapp.com",
+      databaseURL: "https://sir-mvit-blog.firebaseio.com",
+      projectId: "sir-mvit-blog",
+      storageBucket: "sir-mvit-blog.appspot.com",
+      messagingSenderId: "160349909662",
+      appId: "1:160349909662:web:1b5f712a7a109c53df818f",
+      measurementId: "G-71RMEJSLER"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
 
-  // make firebase and firestore reference;
+    // make firebase and firestore reference;
 
-  const auth=firebase.auth();
-  const db=firebase.firestore();
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+  </script>
 
+  <script>
+    $(document).ready(function () {
+      // Check for click events on the navbar burger icon
+      $(".navbar-burger").click(function () {
 
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        $(".navbar-burger").toggleClass("is-active");
+        $(".navbar-menu").toggleClass("is-active");
 
-</script>
+      });
 
-<script>
-      $(document).ready(function()
-{
-       // Check for click events on the navbar burger icon
-  $(".navbar-burger").click(function() {
+      //trigger blog modal
+      $('#add_blog').on('click', function () {
+        $('#blog-form').addClass('is-active');
 
-// Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-$(".navbar-burger").toggleClass("is-active");
-$(".navbar-menu").toggleClass("is-active");
+        $('#closeblog').on('click', function () {
+          $('#blog-form').removeClass('is-active');
 
-});
-
-//trigger blog modal
-$('#add_blog').on('click',function(){
-$('#blog-form').addClass('is-active');
-
-$('#closeblog').on('click',function(){
-$('#blog-form').removeClass('is-active');
-
-});
-});
+        });
+      });
 
 
-            //insert data to dom elements
+      //insert data to dom elements
 
-            const domelement=document.querySelector('.content');
+      const domelement = document.querySelector('.content');
 
-            const setUpData=(data)=>{
-                  if(data.length)
-                  {
-                        let html="";
-                  data.forEach(doc => {
-                        const blogs=doc.data();
-                        console.log(blogs);
-                        const content=`
+      const setUpData = (data) => {
+        if (data.length) {
+          let html = "";
+          data.forEach(doc => {
+            const blogs = doc.data();
+            console.log(blogs);
+            const content = `
                         <h1 class="title">${blogs.title}</h1>
 
                         <p align="center"><figure class="image is-64x64">
@@ -355,258 +354,257 @@ $('#blog-form').removeClass('is-active');
                               </figure></p>
                         
                         <p>Post By ${blogs.by}</p>
-                        <p>${blogs.description}</p>
+                        <p>on: ${blogs.at}</p>
+                        <p class="subtitle is-size-5">${blogs.description}</p>
                         <a href="${blogs.url}" class="button is-danger is-rounded"><i class="fas fa-eye"></i></a>
                         <a href="whatsapp://send?text=${blogs.url}" class="button is-primary is-rounded"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://twitter.com/intent/tweet?text=${blogs.url}" class="button is-link is-rounded"><i class="fab fa-twitter"></i></a>
                         `;
-                        html+=content;
-                  });
-                  domelement.innerHTML=html;
-                  }
-                  else
-                  {     $('#image').attr('src','connection.png');
-                        domelement.innerHTML="<h1 class='title is-size-1'>A Fatal Error</h1>";   
-                  }
+            html += content;
+          });
+          domelement.innerHTML = html;
+        } else {
+          $('#image').attr('src', 'connection.png');
+          domelement.innerHTML = "<h1 class='title is-size-1'>A Fatal Error</h1>";
+        }
+      }
+
+
+
+      //check auth status
+
+      auth.onAuthStateChanged(user => {
+        if (user) {
+          console.log('User logged In!');
+
+
+          db.collection('users').doc(user.uid).get().then(doc => {
+            $('#profile').on('click', function () {
+              $('#user-profile').addClass('is-active');
+              $('.user-email').html('Signed in as ' + user.email);
+              $('#user-image').attr('src', doc.data().imgUrl);
+              $('#user-name').html(doc.data().name);
+              $('.user-bio').html('Your Bio ' + doc.data().bio);
+              console.log('working');
+
+            });
+            $('#closeprofile').on('click', function () {
+              $('#user-profile').removeClass('is-active');
+            });
+          });
+
+
+
+          $('#logout').css('display', 'block');
+          $('#add_blog').css('display', 'block');
+          $('#profile').css('display', 'block');
+          $('#signup').css('display', 'none');
+          $('#login').css('display', 'none');
+          //send the blog to database
+          $('#form-blog').on('submit', function (e) {
+            $('#blogsubmit').addClass('is-loading');
+            e.preventDefault();
+            const blogtitle = $('#blogtitle').val();
+            const desc = $('#desc').val();
+            const link = $('#url').val();
+            var post_user = "";
+            var user_image = "";
+            let dates=new Date();
+            let days=['Sun','Mon','Tue','Wed','Thu','Friday','Sat'];
+            let months=['Dec','Jan','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov'];
+            let year=dates.getFullYear();
+            let Hour=dates.getHours();
+            let Min=dates.getMinutes();
+            let Sec=dates.getSeconds();
+            let stamp=days[dates.getDay()]+' '+months[dates.getMonth()]+' '+year+' '+Hour+':'+Min+':'+Sec;
+            db.collection('users').doc(user.uid).get().then(doc => {
+              post_user = doc.data().name;
+              user_image = doc.data().imgUrl;
+              console.log(post_user);
+              console.log(user_image);
+              add_data(post_user, user_image);
+            });
+
+
+            const add_data = (name, image) => {
+              db.collection('blogs').add({
+                title: blogtitle,
+                by: name,
+                imgUrl: image,
+                description: desc,
+                url: link,
+                at:stamp
+              }).then(() => {
+                console.log('Blog Added!');
+                $('#blogsubmit').removeClass('is-loading');
+                $('#blog-form').removeClass('is-active');
+                $('#form-blog').trigger("reset");
+
+
+              }).catch(err => {
+                console.log(err.message);
+                domelement.innerHTML = `<h1 class='title'>${err.message}</h1>`;
+              });
             }
 
-            
-      
-//check auth status
-
-auth.onAuthStateChanged(user=>{
-      if(user)
-      {
-            console.log('User logged In!');
-            
-
-            db.collection('users').doc(user.uid).get().then(doc=>{
-                  $('#profile').on('click',function(){
-                  $('#user-profile').addClass('is-active');
-                  $('.user-email').html('Signed in as '+user.email);
-                  $('#user-image').attr('src',doc.data().imgUrl);
-                  $('#user-name').html(doc.data().name);
-                  $('.user-bio').html('Your Bio '+doc.data().bio);
-                  console.log('working');
-                  
-            });
-            $('#closeprofile').on('click',function(){
-                  $('#user-profile').removeClass('is-active');
-            });
-            });
-            
-            
-            
-      $('#logout').css('display','block');
-      $('#add_blog').css('display','block');
-      $('#profile').css('display','block');
-      $('#signup').css('display','none');
-      $('#login').css('display','none');
-      //send the blog to database
-      $('#form-blog').on('submit',function(e)
-{
-      $('#blogsubmit').addClass('is-loading');
-   e.preventDefault();   
-const blogtitle=$('#blogtitle').val();
-const desc=$('#desc').val();
-const link=$('#url').val();
-var post_user="";
-var user_image="";
-db.collection('users').doc(user.uid).get().then(doc=>{
-post_user=doc.data().name;
-user_image=doc.data().imgUrl;
-console.log(post_user);
-console.log(user_image);
-add_data(post_user,user_image);
-});
-
-
-const add_data = (name,image)=>{
-      db.collection('blogs').add({
-      title:blogtitle,
-      by:name,
-      imgUrl:image,
-      description:desc,
-      url:link
-}).then(()=>{
-      console.log('Blog Added!');
-      $('#blogsubmit').removeClass('is-loading');
-      $('#blog-form').removeClass('is-active');
-      $('#form-blog').trigger("reset");
-      
-     
-}).catch(err=>{
-      console.log(err.message);
-      domelement.innerHTML=`<h1 class='title'>${err.message}</h1>`;  
-});
-}
-
-});
-      //get blog data
-      db.collection('blogs').onSnapshot(snapshot=>{
+          });
+          //get blog data
+          db.collection('blogs').onSnapshot(snapshot => {
             console.log(snapshot.docs);
             //$('#image').attr('src','first-post.png');
             setUpData(snapshot.docs);
+          });
+        } else {
+          console.log('User Logged out!');
+          $('#logout').css('display', 'none');
+          $('#add_blog').css('display', 'none');
+          $('#profile').css('display', 'none');
+          $('#signup').css('display', 'inline-block');
+          $('#login').css('display', 'inline-block');
+          domelement.innerHTML = "<h1 class='title'>You have to Logged In First!</h1>";
+        }
+      })
+
+      //signup
+      $('#signup').on('click', function () {
+        $('#signup-form').addClass('is-active');
+
+        //close the form on submit the form by default
+        $('#close').on('click', function () {
+          $('#signup-form').removeClass('is-active');
+        });
+
+
+
+        $('#form-signup').on('submit', function (e) {
+          e.preventDefault();
+          const full_name = $('#uname').val();
+          const email = $('#email').val();
+          const password = $('#password').val();
+          const bioText = $('#bio').val();
+
+
+          auth.createUserWithEmailAndPassword(email, password).then(cred => {
+            console.log(cred.user);
+            return db.collection('users').doc(cred.user.uid).set({
+              bio: bioText,
+              imgUrl: 'https://avatars.dicebear.com/v2/avataaars/' + full_name + '.svg',
+              name: full_name,
+            });
+          }).then(() => {
+            $('#signup-form').removeClass('is-active');
+            $('#form-signup').trigger("reset");
+          }).catch(function (error) {
+            console.log(error.message);
+            console.log('Error Occurred!');
+            domelement.innerHTML = "<p class='subtitle has-text-danger'>" + error.message + "</p>";
+            $('#signup-form').removeClass('is-active');
+            $('#form-signup').trigger("reset");
+          });
+
+        });
+
+
+
+
       });
-      }
-      else
-      {
-            console.log('User Logged out!');
-            $('#logout').css('display','none');
-            $('#add_blog').css('display','none');
-            $('#profile').css('display','none');
-            $('#signup').css('display','inline-block');
-            $('#login').css('display','inline-block');
-            domelement.innerHTML="<h1 class='title'>You have to Logged In First!</h1>"; 
-      }
-})
 
-//signup
-$('#signup').on('click',function()
-{
-$('#signup-form').addClass('is-active');
 
-//close the form on submit the form by default
-$('#close').on('click',function(){
-$('#signup-form').removeClass('is-active');
-});
+      //logout the user
+
+      $('#logout').on('click', function () {
+        auth.signOut().then(() => {
+
+        })
+      });
 
 
 
-$('#form-signup').on('submit',function(e)
-{
-e.preventDefault();
-const full_name=$('#uname').val();
-const email=$('#email').val();
-const password=$('#password').val();
-const bioText = $('#bio').val();
-$('#submitsignup').addClass('is-loading');
+      //login user
 
-auth.createUserWithEmailAndPassword(email,password).then(cred=>{
-console.log(cred.user);
-return db.collection('users').doc(cred.user.uid).set({
-      bio:bioText,
-      imgUrl:'https://avatars.dicebear.com/v2/avataaars/'+full_name+'.svg',
-      name:full_name,
-});
-}).then(()=>{
-$('#signup-form').removeClass('is-active');
-$('#form-signup').trigger("reset");
-}).catch(function(error){
-      console.log(error.message);
-      console.log('Error Occurred!');
-      domelement.innerHTML="<p class='subtitle has-text-danger'>"+error.message+"</p>";
-      $('#signup-form').removeClass('is-active');
-      $('#form-signup').trigger("reset");
-});
+      $('#login').on('click', function () {
+        $('#login-form').addClass('is-active');
 
-});
+        //close the form on submit the form by default
+        $('#closelogin').on('click', function () {
+          $('#login-form').removeClass('is-active');
+        });
 
 
 
+        $('#form-login').on('submit', function (e) {
+          e.preventDefault();
+          const email = $('#emaillogin').val();
+          const password = $('#passwordlogin').val();
+          $('#loginsubmit').addClass('is-loading');
 
-});
+          auth.signInWithEmailAndPassword(email, password).then(cred => {
+            //console.log(cred.user);
+            $('#login-form').removeClass('is-active');
+            $('#form-login').trigger("reset");
+          }).catch(function (error) {
+            console.log(error.message);
+            console.log('Error Occurred!');
+            domelement.innerHTML = "<p class='subtitle has-text-danger'>" + error.message + "</p>";
+            $('#login-form').removeClass('is-active');
+          });
 
-
-//logout the user
-
-$('#logout').on('click',function()
-{
-auth.signOut().then(()=>{
-      
-})
-});
-
-
-
-//login user
-
-$('#login').on('click',function()
-{
-$('#login-form').addClass('is-active');
-
-//close the form on submit the form by default
-$('#closelogin').on('click',function(){
-$('#login-form').removeClass('is-active');
-});
+        });
 
 
+        //forgot password
 
-$('#form-login').on('submit',function(e)
-{
-e.preventDefault();
-const email=$('#emaillogin').val();
-const password=$('#passwordlogin').val();
-$('#loginsubmit').addClass('is-loading');
-
-auth.signInWithEmailAndPassword(email,password).then(cred=>{
-//console.log(cred.user);
-$('#login-form').removeClass('is-active');
-$('#form-login').trigger("reset");
-}).catch(function(error){
-      console.log(error.message);
-      console.log('Error Occurred!');
-      domelement.innerHTML="<p class='subtitle has-text-danger'>"+error.message+"</p>";
-      $('#login-form').removeClass('is-active');
-});
-
-});
+        $('#forget').on('click', function () {
+          $('#login-form').removeClass('is-active');
+          $('#forget-form').addClass('is-active');
 
 
-//forgot password
 
-$('#forget').on('click',function(){
-      $('#login-form').removeClass('is-active');
-      $('#forget-form').addClass('is-active');
-
-      
-
-      //close the forget password dialogue on close button click
-      $('#closeforget').on('click',function(){
+          //close the forget password dialogue on close button click
+          $('#closeforget').on('click', function () {
             $('#forget-form').removeClass('is-active');
+          });
+
+
+
+        });
+
+
+        $('#form-forget').on('submit', function (e) {
+          e.preventDefault();
+          const emailforget = $('#emailforget').val();
+          if (emailforget != "") {
+            auth.sendPasswordResetEmail(emailforget).then(() => {
+              domelement.innerHTML =
+                "<p class='subtitle has-text-success'>Email Sented Please Check Email.</p>";
+              $('#forget-form').removeClass('is-active');
+            }).catch((error) => {
+              console.log(error.message);
+              domelement.innerHTML = "<p class='subtitle has-text-danger'>" + error.message + "</p>";
+              console.log('Email Not Found!');
+            })
+          } else {
+            domelement.innerHTML = "<p class='subtitle has-text-danger'>Email Required</p>";
+            $('#forget-form').removeClass('is-active');
+          }
+
+        });
+
+
+
+
       });
 
-      
-
-});
-
-
-$('#form-forget').on('submit',function(e){
-      e.preventDefault();
-            const emailforget=$('#emailforget').val();
-            if(emailforget!="")
-            {
-                  auth.sendPasswordResetEmail(emailforget).then(()=>{
-                        domelement.innerHTML="<p class='subtitle has-text-success'>Email Sented Please Check Email.</p>";
-                        $('#forget-form').removeClass('is-active');
-                  }).catch((error)=>{
-                        console.log(error.message);
-                        domelement.innerHTML="<p class='subtitle has-text-danger'>"+error.message+"</p>";
-                        console.log('Email Not Found!');
-                  })
-            }
-            else
-            {
-                  domelement.innerHTML="<p class='subtitle has-text-danger'>Email Required</p>"; 
-                  $('#forget-form').removeClass('is-active');  
-            }
-
-      });
-
-
-
-
-});
 
 
 
 
 
 
+    });
+  </script>
 
-});
-</script>
 
+</body>
 
-  </body>
 </html>
