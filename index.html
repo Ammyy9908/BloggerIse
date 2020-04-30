@@ -348,7 +348,7 @@
             const blogs = doc.data();
             console.log(blogs);
             const content = `
-                        <h1 class="title">${blogs.title}</h1>
+                        <h1 class="title" id="${blogs.title}">${blogs.title}</h1>
 
                         <p align="center"><figure class="image is-64x64">
                               <img src="${blogs.imgUrl}" class="is-rounded">
