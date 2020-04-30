@@ -348,7 +348,7 @@
             const blogs = doc.data();
             console.log(blogs);
             var title=blogs.title;
-            title=title.replace(/ /g, "%20");
+            title=title.replace(/\s/g, '%20');
             const content = `
                         <h1 class="title" id="${blogs.title}">${blogs.title}</h1>
 
