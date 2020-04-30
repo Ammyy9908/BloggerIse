@@ -368,6 +368,13 @@
           domelement.innerHTML = "<h1 class='title is-size-1'>A Fatal Error</h1>";
         }
       }
+      
+       //get blog data
+          db.collection('blogs').onSnapshot(snapshot => {
+            console.log(snapshot.docs);
+            //$('#image').attr('src','first-post.png');
+            setUpData(snapshot.docs);
+          });
 
 
 
@@ -448,12 +455,7 @@
             }
 
           });
-          //get blog data
-          db.collection('blogs').onSnapshot(snapshot => {
-            console.log(snapshot.docs);
-            //$('#image').attr('src','first-post.png');
-            setUpData(snapshot.docs);
-          });
+         
         } else {
           console.log('User Logged out!');
           $('#logout').css('display', 'none');
