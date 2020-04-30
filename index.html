@@ -347,7 +347,7 @@
           data.forEach(doc => {
             const blogs = doc.data();
             console.log(blogs);
-            var title=blogs.title;
+            var title=blogs.title.replace(/\s/g,"%20");
             console.log(title.replace(/\s/g,"%20"));
 
             const content = `
@@ -361,7 +361,7 @@
                         <p>on: ${blogs.at}</p>
                         <p class="subtitle is-size-5">${blogs.description}</p>
                         <a href="${blogs.url}" class="button is-danger">Read Full Article</a>
-                        <a href="whatsapp://send?text=https://bloggerise.netlify.app/#${title.replace(/\s/g,"%20")}" class="button is-primary">Share on <i class="fab fa-whatsapp" style="margin-left:15px;"></i></a>
+                        <a href="whatsapp://send?text=https://bloggerise.netlify.app/#${title}" class="button is-primary">Share on <i class="fab fa-whatsapp" style="margin-left:15px;"></i></a>
                         <a href="https://twitter.com/intent/tweet?text=https://bloggerise.netlify.app/#${blogs.title}" class="button is-link">Share on <i class="fab fa-twitter" style="margin-left:15px;"></i></a>
                         `;
             html += content;
