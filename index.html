@@ -374,9 +374,9 @@
       
        //get blog data
           db.collection('blogs').onSnapshot(snapshot => {
-            console.log(snapshot.docs);
+            console.log(snapshot);
             //$('#image').attr('src','first-post.png');
-            setUpData(snapshot.docs);
+            //setUpData(snapshot.docs);
           });
 
 
