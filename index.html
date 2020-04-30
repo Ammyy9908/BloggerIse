@@ -343,8 +343,11 @@
       const setUpData = (data) => {
         if (data.length) {
           let html = "";
+         
           data.forEach(doc => {
             const blogs = doc.data();
+            let id=data.docs.id;
+            console.log(id);
             console.log(blogs);
             var title=blogs.title.replace(/\s/g,"%20");
             console.log(title.replace(/\s/g,"%20"));
@@ -376,7 +379,7 @@
           db.collection('blogs').onSnapshot(snapshot => {
             console.log(snapshot);
             //$('#image').attr('src','first-post.png');
-            //setUpData(snapshot.docs);
+            setUpData(snapshot.docs);
           });
 
 
